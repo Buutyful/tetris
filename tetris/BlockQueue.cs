@@ -29,7 +29,7 @@ public class BlockQueue
 
     public CurrentBlockState GetNextBlock()
     {
-        if (_blocks.Count < 7)
+        if (_blocks.Count == 0)
         {
             FillQueue();
         }
