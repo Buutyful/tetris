@@ -26,7 +26,7 @@ public class Game
     {
         foreach (var p in _currentBlock.TilePositions())
         {
-            _grid.SetCell(p.Row, p.Col, (int)_currentBlock.Block.Type);
+            _grid[p.Row, p.Col] = (int)_currentBlock.Block.Type;
         }
 
         _grid.ClearFullRows();
@@ -140,9 +140,9 @@ public class Game
                 {
                     buffer.Append("░░");
                 }
-                else if (_grid.GetCell(r, c) != 0)
+                else if (_grid[r, c] != 0)
                 {
-                    buffer.Append(GetBlockString((BlockType)_grid.GetCell(r, c)));
+                    buffer.Append(GetBlockString((BlockType)_grid[r, c]));
                 }
                 else
                 {

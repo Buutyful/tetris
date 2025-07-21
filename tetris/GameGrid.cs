@@ -20,13 +20,13 @@ public class GameGrid(int rows, int cols)
         return IsInside(r, c) && _grid[r, c] == 0;
     }
 
-    public int GetCell(int r, int c)
+    private int GetCell(int r, int c)
     {
         if (!IsInside(r, c)) return -1;
         return _grid[r, c];
     }
 
-    public void SetCell(int r, int c, int value)
+    private void SetCell(int r, int c, int value)
     {
         if (IsInside(r, c))
         {
